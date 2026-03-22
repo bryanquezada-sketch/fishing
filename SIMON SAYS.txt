@@ -16,8 +16,10 @@ randomTime.Delay somewhere between 5 seconds and 30 seconds?
 then hookFish();
 
 hookFish(){
-    fishSize = weightedRandom[fry(60%)/keeper(30%)/trophy(10)]
-    
+    fishSize = weightedRandom[fry(60%)/keeper(30%)/trophy(10%)]
+    if (fishSize = fry/keeper/trophy)
+        fishHP = 100/300/1000
+    lineTension = 0;
 }
 
 we'll need input so
@@ -39,16 +41,9 @@ eventListener keyboardinput(e) => {
     correctButtonChecker()
 }
 
-FISH PROMPTS - STATUS/BUFFS        REQUIRED FISHING SKILL       EFFECT OF SUCCESS
-- Leaping                          Big Reel In                  Deals MAX Dmg
-- Pulling                          Reel In                      Deals NORM Dmg
-- Moving Left                      Stand Firm Left              STUN + Prevent HP Regen
-- Moving Right                     Stand Firm Right             STUN + Prevent HP Regen
-- Struggling                       Give Slack                   Reduces Line Tension
-
 time.event () => {
     delay: 1000
-    lineTension += 1
+    lineTension += math.random(1% or 2%)
     repeat: true
 }
 
@@ -63,11 +58,9 @@ correctButtonChecker(){
         maxDamage();
     } else if (currentPrompt = movingLeft && standLeft || currentPrompt = movingRight && standRight) {
         fishStun();
-    }
     } else {
         lineTension += 5;
     }
-
 
 }
 

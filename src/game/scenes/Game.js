@@ -26,6 +26,28 @@ export class Game extends Scene
             right: Phaser.Input.Keyboard.KeyCodes.D,
         });
 
+
+
+        this.fishPrompt = null
+
+        
+    }
+
+    startFishing(){
+        let minBiteTime = 5000;
+        let maxBiteTime = 20000; 
+
+        let randomDelay = Phaser.Math.Between(min, max);
+
+        this.time.delayedCall(randomDelay, () => {
+            //consider adding that animal crossing fish tease
+            //nibbleWindow(); <---Time player has to start reacting or fish gets away
+            fishBite();
+            //play Pokemon battle music! (not really)
+        })
+    }
+
+    engageFish(){
         
     }
 
