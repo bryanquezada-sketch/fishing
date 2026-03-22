@@ -1,7 +1,15 @@
 Prep
 Find circling seagulls in ocean/large lakes to indicate school of fish
 Chumming - throw the correct type of Chum to start fishing frenzy
+            Weighted chance when you cast into the school
+            Gargantuans appear ~5-10% of the times
 Casting - Cast line
+
+
+Starting rods/proficiency catches smalls reliably, difficulty scales, you know.
+EXPANSION IDEA - Boat upgrades
+EXPANSION IDEA - Labor/Stamina required to fish to prevent grinding. If this becomes bigger than a one-off game
+Other Idea - This could be it's own combat system for something else if this game doesn't work out!
 
 -- Battle --
 
@@ -15,17 +23,41 @@ FISH PROMPTS - STATUS/BUFFS        REQUIRED FISHING SKILL       EFFECT OF SUCCES
 - Moving Right                     Stand Firm Right             STUN + Prevent HP Regen
 - Struggling                       Give Slack                   Reduces Line Tension
 
-Prompts Icon FLASHES
-Each Prompt has a TIMER on the prompt
+PROMPT Icon FLASHES
+Each PROMPT has a TIMER on the PROMPT
+PROMPTs are random(weighted). Rare to see same PROMPT 3 times in a row, but possible.
+    Weight randomness against STRUGGLING to keep pressure on(test this thoroughly).
+
+Missing ~2 seconds of human reaction time will red-line meter and snap the line
 
 Display Fish HP/Difficulty
-Can only deal damage when fish gives prompt
+Can only deal damage when fish gives PROMPT
 If Frenzy Ends, fishing is canceled
-Fishing tension is a bar/window of color change, that way it's more feel than visual...maybe
+Fishing TENSION is a bar/window of color change, that way it's more feel than visual...maybe
 Distance is shown numerically? Maybe it's better by feel.
-Duration of each 
-
-Either show prompts over fish, or animate(PFFT!) telegraphing actions. [At least leap bro]
+TENSION starts at 0 or EMPTY/BRIGHT GREEN the moment you hook the fish
+TENSION builds: Passive - Rising slowly just by having the fish on the hook
+                Active - It jumps whenever you use REEL IN or BIG REEL IN, even successfully
+                Penalty - Spikes if you use the wrong skill for current PROMPTS
+                        Instantly spikes 10% to 15% to your TENSION bar instantly
+TENSION recovers: Matching LEFT/RIGHT/SLACK - Succesfully matching the skills lowers
+                    TENSION signficantly.
+                  Natural Decay - If you stop pressing any buttons, TENSION slowly drains,
+                    but the fish will gain distance and heal. It's a "damned if you do,
+                    damned if you don't" situation
+ZERO Grace Period - When you press a skill, character animates for 1-1.5 seconds & locked in.
+The Override - If the fish siwtches buffs while you are mid-animation, you cannot "cancel"
+                it with a  movement key. You must immediately press the new correct skill
+Duration of each buff is semi-random(3-5 seconds)
+Must react the moment the icon swaps. If mid-animation for the "wrong" skill, you
+    have to cancel or override it immediately.
+Skills are active "attacks"
+Must SPAM the key associated with current PROMPT
+Each successful "attack/hit" while the buff is active deals a chunk of damage or stuns
+RESET: If the fish switches from "Left" to "Big Reel" must stop hitting "Left" and start
+        mashing "Big Reel" key. If you keep hitting "Left", you deal 0 DMG and the
+        TENSION spikes!
+Either show PROMPTs over fish, or animate(PFFT!) telegraphing actions. [At least animate leap bro]
 
 
 
@@ -42,9 +74,45 @@ LINE TENSION -  Represented by a bar on the right side of the screen
 
 -- EFFECTS --
 
+A TICK is = 1 to 1.5 seconds
+
+REEL IN - Deals standard DMG, raises TENSION (3% to 5%) per TICK while the skill is active.
+BIG REEL IN - Deals massive DMG, raises about 5% to 8% per TICK while the skill is active. Can only sustain for about 4-6 seconds
+                before you must stop or use a utility skill, otherwise you'll snap the line
+                Big gamble, only to be used if tension is <50%. If you BIG REEL IN while at 70%
+                tension, and the fish doesn't swap to a STAND FIRM/SLACK move quickly, player is
+                forced to stop attacking entirely to let the tension decay, which lets the fish heal
 STUN -  This is critical, it stops the fish from regenerating and prevents it from swimming further away
         if missed, the fish remains active, making the fight much longer or causing
         the line to break.
-GIVE SLACK - Can be used any time to drop tension, but doing so when the fish isn'tension
-             struggling, is a waste of time, gives fish time to recover or gain ground
+STAND FIRM LEFT/RIGHT - Reduced TENSION by about ~10% per second while preventing fish from healing
+GIVE SLACK - Can be used any time to drop TENSION(30%), but doing so when the fish isn't
+             STRUGGLING, is a waste of time, gives fish time to recover or gain ground.
+             if used while STRUGGLING, it's a reset button. Fastest way to tank tension
+             from 90% back down to 40%, but the fish will usually swim 5-10 meters away
+             during the animation
 
+On bigger fish, percentages may be even more aggressive for tension both for recovery and building
+to force player to have either an awesome rod or fishing proficiency(?). Maybe lets not do fishing
+proficiency.
+
+-- TENSION & DMG MATH (For standard Fish) --
+Values will vary based on fishing rod tier.(or proficiency? if we include it. More prof = more DMG)
+
+ACTION                  TENSION CHANGE              DMG DEALT(approx.)
+Passive/Idle            +1-2%/second                0%
+REEL IN (Correct)       +3-5% per TICK              ~2-3% of HP
+BIG REEL IN (Correct)	+8% to 12% per TICK	        ~5% to 7% of HP
+STAND FIRM (Correct)	-5% to 8% per TICK          0% (Stops Regen)
+GIVE SLACK (Correct)	-15% to 20% per TICK	    0% (Fish gains ~5m)
+Wrong Button	        +15% Spike per click	    0% (Fish Heals)
+
+-- $ COMPARISON BY SIZE --
+
+SIZE                AVG HP          FIGHT TIMER         SALE VALUE
+Small (Fry)         18,000          1-2 Minutes         8 - 11 $
+Medium              30,000          3-4 Minutes         18 - 22 $
+Gargantuan          37,000+         5+ Minutes          34 - 45+ $
+
+Types of Fish: Tuna & Marlin
+Tuna worth roughly a little over half(51-55%)
