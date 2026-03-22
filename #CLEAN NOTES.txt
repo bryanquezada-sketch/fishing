@@ -7,6 +7,7 @@ Small (Fry): ~80%
 Medium: ~10-15%
 Gargantuan: 5-10%
 Initial Hook: Must react immediately to the bite for initial DMG, or lose bait/hook.
+
 2. Battle Mechanics (The "Simon Says" Loop)
 Core Concept: Fast-paced rhythm reaction + Tug-of-War vs. a 5-Minute Hook Timer.
 Prompt Reaction Table
@@ -21,6 +22,7 @@ Active Attacks: Skills are not toggles; you must SPAM the key during the prompt.
 Animation Lock: Using a skill locks the player for 1-1.5s.
 The Override: If the prompt changes mid-animation, player must hit the new key immediately to clip the old animation and avoid a penalty.
 Grace Period: Zero. Wrong key = Instant 15% Tension Spike.
+
 3. Tension & Distance (Fail Conditions)
 Tension Bar: Starts at 0%.
 Passive Gain: +1-2% per second.
@@ -31,6 +33,7 @@ Loss Conditions:
 Tension hits 100% (Snap).
 Distance exceeds Rod Limit (Escape).
 Hook Timer hits 0 (Despawn).
+
 4. Balancing & Math (Standard Fish)
 Action	Tension Change	HP Damage
 Passive/Idle	+1-2% / sec	0% (Fish heals 1-2%/sec)
@@ -39,12 +42,14 @@ Big Reel (Correct)	+8-12% / tick	~5-7%
 Stand Firm (Correct)	-5-8% / tick	0% (Stops Regen)
 Give Slack (Correct)	-15-20% / tick	0% (Fish gains ~5m)
 Wrong Button	+15% Spike	0% (Fish Heals)
+
 5. Economy & Progression
 Size	HP	Fight Time	Sale Value
 Small	18,000	1-2 Min	8-11 $
 Medium	30,000	3-4 Min	18-22 $
 Gargantuan	37,000+	5 Min (Max)	34-45+ $
 Note: Tuna is worth ~55% of Marlin value.
+
 6. Expansion Ideas (Post-MVP)
 Talent Tree: Upgrade "Grace Periods," "Tension Resistance," or "High-Test Line."
 Boat Upgrades: Sonar for finding schools or larger storage tanks.
