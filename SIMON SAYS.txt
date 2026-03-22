@@ -1,0 +1,31 @@
+So wtf is Simon says mechanically.
+
+First, random prompts
+Second, response to prompts - so we'll need input here
+third, next random prompt
+we're going to need HP too - UI. We'll start with 10hp for prototype
+On correct response, lower hp.
+
+LETS JUST DO THIS First
+
+-PROMPT GENERATOR, COLORS, 4. We need some state machine
+So
+redPrompt
+greenPrompt
+yellowPrompt
+bluePrompt
+...purplePrompt (WE'RE DOING 5!)
+
+So create() array of prompts const colors = [red,grn,ylw,blu,purp]
+currentPrompt = Math.random.weighted[colors]
+
+eventListener for inputs
+    can we use case? Look into that.
+    Check to see if input and & prompt match
+    
+
+IDEA: We use the mouse. Use multiple controls for mobile/laptops
+Reel in = Scroll Wheel Down
+Big Reel In = Drag Mouse Downwards by X amount
+Stand Firm Left = Left Click
+Stand Firm RIght = Right Click

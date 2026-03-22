@@ -25,6 +25,8 @@ export class Game extends Scene
             left: Phaser.Input.Keyboard.KeyCodes.A,
             right: Phaser.Input.Keyboard.KeyCodes.D,
         });
+
+        
     }
 
     update()
