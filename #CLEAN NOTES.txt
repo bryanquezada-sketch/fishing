@@ -1,0 +1,52 @@
+🎣 Game Design Doc: Sport Fishing MVP
+1. World & Preparation (The Setup)
+The Hunt: Players find circling seagulls to locate a "School."
+Chumming: Use specific Chum to trigger a 45-minute "Frenzy."
+Weighted Spawns:
+Small (Fry): ~80%
+Medium: ~10-15%
+Gargantuan: 5-10%
+Initial Hook: Must react immediately to the bite for initial DMG, or lose bait/hook.
+2. Battle Mechanics (The "Simon Says" Loop)
+Core Concept: Fast-paced rhythm reaction + Tug-of-War vs. a 5-Minute Hook Timer.
+Prompt Reaction Table
+Fish Status	Required Skill	Success Effect
+Leaping	Big Reel In	MAX Damage
+Pulling	Reel In	Normal Damage
+Moving Left	Stand Firm Left	STUN (Stops HP Regen/Movement) + Lowers Tension
+Moving Right	Stand Firm Right	STUN (Stops HP Regen/Movement) + Lowers Tension
+Struggling	Give Slack	Massive Tension Reduction
+The "Tick" System (1.0 – 1.5 Seconds)
+Active Attacks: Skills are not toggles; you must SPAM the key during the prompt.
+Animation Lock: Using a skill locks the player for 1-1.5s.
+The Override: If the prompt changes mid-animation, player must hit the new key immediately to clip the old animation and avoid a penalty.
+Grace Period: Zero. Wrong key = Instant 15% Tension Spike.
+3. Tension & Distance (Fail Conditions)
+Tension Bar: Starts at 0%.
+Passive Gain: +1-2% per second.
+Active Gain: Reeling adds tension even when correct.
+Natural Decay: Drains slowly if idle, but fish heals and gains distance.
+Distance (Meters): Fish "stresses" and swims away if prompts are missed or player is idle.
+Loss Conditions:
+Tension hits 100% (Snap).
+Distance exceeds Rod Limit (Escape).
+Hook Timer hits 0 (Despawn).
+4. Balancing & Math (Standard Fish)
+Action	Tension Change	HP Damage
+Passive/Idle	+1-2% / sec	0% (Fish heals 1-2%/sec)
+Reel In (Correct)	+3-5% / tick	~2-3%
+Big Reel (Correct)	+8-12% / tick	~5-7%
+Stand Firm (Correct)	-5-8% / tick	0% (Stops Regen)
+Give Slack (Correct)	-15-20% / tick	0% (Fish gains ~5m)
+Wrong Button	+15% Spike	0% (Fish Heals)
+5. Economy & Progression
+Size	HP	Fight Time	Sale Value
+Small	18,000	1-2 Min	8-11 $
+Medium	30,000	3-4 Min	18-22 $
+Gargantuan	37,000+	5 Min (Max)	34-45+ $
+Note: Tuna is worth ~55% of Marlin value.
+6. Expansion Ideas (Post-MVP)
+Talent Tree: Upgrade "Grace Periods," "Tension Resistance," or "High-Test Line."
+Boat Upgrades: Sonar for finding schools or larger storage tanks.
+The Haul: A mini-game navigating back to the docks while slowed by fish, avoiding "Pirate" NPCs.
+Labor System: Stamina cost per catch to manage game economy.
