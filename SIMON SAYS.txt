@@ -8,20 +8,17 @@ On correct response, lower hp.
 
 LETS JUST DO THIS First
 
--PROMPT GENERATOR, COLORS, 4. We need some state machine
-So
-redPrompt
-greenPrompt
-yellowPrompt
-bluePrompt
-...purplePrompt (WE'RE DOING 5!)
-
-So create() array of prompts const colors = [red,grn,ylw,blu,purp]
-currentPrompt = Math.random.weighted[colors]
-
 for our case it'll be const prompts = [leaping, pulling, movingLeft, movingRight, struggling]
 
-Maybe we just need listeners then?
+We'll need a delay before fish combat starts. The waiting before the hooking of the fish.
+
+randomTime.Delay somewhere between 5 seconds and 30 seconds?
+then hookFish();
+
+hookFish(){
+    fishSize = weightedRandom[fry(60%)/keeper(30%)/trophy(10)]
+    
+}
 
 we'll need input so
 
@@ -36,6 +33,8 @@ standRight = keyCodeD
 reelIn = keyCodeS
 bigReel = keyCodeSpace
 
+lineTension = 0;
+
 eventListener keyboardinput(e) => {
     correctButtonChecker()
 }
@@ -47,22 +46,42 @@ FISH PROMPTS - STATUS/BUFFS        REQUIRED FISHING SKILL       EFFECT OF SUCCES
 - Moving Right                     Stand Firm Right             STUN + Prevent HP Regen
 - Struggling                       Give Slack                   Reduces Line Tension
 
+time.event () => {
+    delay: 1000
+    lineTension += 1
+    repeat: true
+}
+
 eventListener for inputs
-    can we use case? Look into that.
+    Can we use case? Look into that.
     Check to see if input and & prompt match
 
 correctButtonChecker(){
     if (currentPrompt = pulling && reelIn.isDown){
         standardDamage();
+    } else if (currentPrompt = pulling && reelIn.isDown){
+        maxDamage();
+    } else if (currentPrompt = movingLeft && standLeft || currentPrompt = movingRight && standRight) {
+        fishStun();
+    }
+    } else {
+        lineTension += 5;
     }
 
-    if (currentPrompt = pulling && reelIn.isDown){
-        maxDamage();
-    }
+
 }
 
 standardDamage(){
     fishHP - 5;
+    lineTension += 5
+    if (fishHP <= 0) {
+        catchFish();
+    }
+}
+
+maxDamage(){
+    fishHP - 70;
+    lineTension += 10
     if (fishHP <= 0) {
         catchFish();
     }
@@ -71,8 +90,21 @@ standardDamage(){
 catchFish(){
     play animation
 
-    if (fishSize = fry/normal/huge)
-    fishPoints +1 //Or inventory eventually
+    if (fishSize = fry/keeper/trophy){
+    fishPoints +1/+3/+10 
+    }
+}
+
+gotAway(){
+    play fish swimming away animation
+    play line snapping animation
+    //allowPlayerMovement
+}
+
+update(){
+    if (lineTension) > 100 {
+        gotAway();
+    }
 }
 
 IDEA: We use the mouse. Use multiple controls for mobile/laptops
