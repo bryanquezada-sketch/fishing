@@ -1,0 +1,50 @@
+Prep
+Find circling seagulls in ocean/large lakes to indicate school of fish
+Chumming - throw the correct type of Chum to start fishing frenzy
+Casting - Cast line
+
+-- Battle --
+
+Concept: Fast paced Simon Says/Bop It + Tug-of-War vs invisible timer
+
+
+FISH PROMPTS - STATUS/BUFFS        REQUIRED FISHING SKILL       EFFECT OF SUCCESS
+- Leaping                          Big Reel In                  Deals MAX Dmg
+- Pulling                          Reel In                      Deals NORM Dmg
+- Moving Left                      Stand Firm Left              STUN + Prevent HP Regen
+- Moving Right                     Stand Firm Right             STUN + Prevent HP Regen
+- Struggling                       Give Slack                   Reduces Line Tension
+
+Prompts Icon FLASHES
+Each Prompt has a TIMER on the prompt
+
+Display Fish HP/Difficulty
+Can only deal damage when fish gives prompt
+If Frenzy Ends, fishing is canceled
+Fishing tension is a bar/window of color change, that way it's more feel than visual...maybe
+Distance is shown numerically? Maybe it's better by feel.
+Duration of each 
+
+Either show prompts over fish, or animate(PFFT!) telegraphing actions. [At least leap bro]
+
+
+
+FEEDBACK - On successful REACTION, display DMG/STUN
+FEEDBACK - On failed reaction, display fish 
+
+-- UI --
+FISH STAMINA/HP - Must reduce to 0 to catch
+LINE TENSION -  Represented by a bar on the right side of the screen
+                Green/Yellow Zone: Safe zones where you can aggressively reel
+                Red Zone: If the bar maxes out, the line snaps instantly and you lose the fish
+                Distance: If you fail to match icons, the fish "stresses" and swims further away
+                          If distance > rod's [LIMIT] (in meters), the fish escapes
+
+-- EFFECTS --
+
+STUN -  This is critical, it stops the fish from regenerating and prevents it from swimming further away
+        if missed, the fish remains active, making the fight much longer or causing
+        the line to break.
+GIVE SLACK - Can be used any time to drop tension, but doing so when the fish isn'tension
+             struggling, is a waste of time, gives fish time to recover or gain ground
+
