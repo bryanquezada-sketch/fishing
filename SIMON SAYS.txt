@@ -3,7 +3,7 @@ So wtf is Simon says mechanically.
 First, random prompts
 Second, response to prompts - so we'll need input here
 third, next random prompt
-we're going to need HP too - UI. We'll start with 10hp for prototype
+we're going to need HP too - UI. We'll start with 100hp for prototype
 On correct response, lower hp.
 
 LETS JUST DO THIS First
@@ -19,10 +19,61 @@ bluePrompt
 So create() array of prompts const colors = [red,grn,ylw,blu,purp]
 currentPrompt = Math.random.weighted[colors]
 
+for our case it'll be const prompts = [leaping, pulling, movingLeft, movingRight, struggling]
+
+Maybe we just need listeners then?
+
+we'll need input so
+
+If 'W', 'A', 'S','D','X' is pressed{
+    run correctButtonChecker(); <---think of a better method name
+}
+
+Maybe instead just assign each key to a variable for ease of reading/remembering
+giveSlack = keyCodeW
+standLeft = keyCodeA
+standRight = keyCodeD
+reelIn = keyCodeS
+bigReel = keyCodeSpace
+
+eventListener keyboardinput(e) => {
+    correctButtonChecker()
+}
+
+FISH PROMPTS - STATUS/BUFFS        REQUIRED FISHING SKILL       EFFECT OF SUCCESS
+- Leaping                          Big Reel In                  Deals MAX Dmg
+- Pulling                          Reel In                      Deals NORM Dmg
+- Moving Left                      Stand Firm Left              STUN + Prevent HP Regen
+- Moving Right                     Stand Firm Right             STUN + Prevent HP Regen
+- Struggling                       Give Slack                   Reduces Line Tension
+
 eventListener for inputs
     can we use case? Look into that.
     Check to see if input and & prompt match
-    
+
+correctButtonChecker(){
+    if (currentPrompt = pulling && reelIn.isDown){
+        standardDamage();
+    }
+
+    if (currentPrompt = pulling && reelIn.isDown){
+        maxDamage();
+    }
+}
+
+standardDamage(){
+    fishHP - 5;
+    if (fishHP <= 0) {
+        catchFish();
+    }
+}
+
+catchFish(){
+    play animation
+
+    if (fishSize = fry/normal/huge)
+    fishPoints +1 //Or inventory eventually
+}
 
 IDEA: We use the mouse. Use multiple controls for mobile/laptops
 Reel in = Scroll Wheel Down
